@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ContactProject.Models;
+using Microsoft.AspNet.Identity;
 
 namespace ContactProject.Controllers
 {
@@ -15,12 +16,15 @@ namespace ContactProject.Controllers
         private ContactProjectContext db = new ContactProjectContext();
 
         // GET: Contacts
+        [Authorize]
         public ActionResult Index()
         {
-            return View(db.Contacts.ToList());
+            var userId = GetCurrentUserId();
+            return View(db.Contacts.Where(x => x.UserId == userId).ToList());
         }
 
         // GET: Contacts/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +40,7 @@ namespace ContactProject.Controllers
         }
 
         // GET: Contacts/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +51,7 @@ namespace ContactProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "Id,UserId,FirstName,LastName,Email,PhonePrimary,PhoneSecondary,Birthday,StreetAddress1,StreetAddress2,City,State,Zip")] Contact contact)
         {
             if (ModelState.IsValid)
@@ -59,6 +65,7 @@ namespace ContactProject.Controllers
         }
 
         // GET: Contacts/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +85,7 @@ namespace ContactProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "Id,UserId,FirstName,LastName,Email,PhonePrimary,PhoneSecondary,Birthday,StreetAddress1,StreetAddress2,City,State,Zip")] Contact contact)
         {
             if (ModelState.IsValid)
@@ -90,6 +98,7 @@ namespace ContactProject.Controllers
         }
 
         // GET: Contacts/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,9 +113,10 @@ namespace ContactProject.Controllers
             return View(contact);
         }
 
-        // POST: Contacts/Delete/5
+        // POST: Contacts/Delete/5        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Contact contact = db.Contacts.Find(id);
@@ -122,6 +132,16 @@ namespace ContactProject.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public Guid GetCurrentUserId()
+        {
+            return new Guid(User.Identity.GetUserId());
+        }
+
+        private bool IsUserContact(Contact contact)
+        {
+            return contact.UserId == GetCurrentUserId();
         }
     }
 }

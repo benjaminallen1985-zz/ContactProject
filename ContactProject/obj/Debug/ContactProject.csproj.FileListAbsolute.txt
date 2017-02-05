@@ -188,5 +188,7 @@ H:\AspNet Projects\ContractProject\ContactProject\bin\Microsoft.Owin.Security.Go
 H:\AspNet Projects\ContractProject\ContactProject\bin\Microsoft.Owin.Security.Twitter.xml
 H:\AspNet Projects\ContractProject\ContactProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 H:\AspNet Projects\ContractProject\ContactProject\obj\Debug\ContactProject.csprojResolveAssemblyReference.cache
+H:\AspNet Projects\ContractProject\ContactProject\obj\Debug\ContactProject.Migrations.InitialCreate.resources
+H:\AspNet Projects\ContractProject\ContactProject\obj\Debug\ContactProject.csproj.GenerateResource.Cache
 H:\AspNet Projects\ContractProject\ContactProject\obj\Debug\ContactProject.dll
 H:\AspNet Projects\ContractProject\ContactProject\obj\Debug\ContactProject.pdb
