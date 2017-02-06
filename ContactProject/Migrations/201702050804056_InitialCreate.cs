@@ -25,7 +25,7 @@ namespace ContactProject.Migrations
                         State = c.String(),
                         Zip = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id); 
             
         }
         
