@@ -18,7 +18,7 @@ namespace ContactProject.Migrations
                         Email = c.String(),
                         PhonePrimary = c.String(),
                         PhoneSecondary = c.String(),
-                        Birthday = c.DateTime(nullable: false),
+                        Birthday = c.DateTime(nullable: true),
                         StreetAddress1 = c.String(),
                         StreetAddress2 = c.String(),
                         City = c.String(),
