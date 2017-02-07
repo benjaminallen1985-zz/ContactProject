@@ -189,6 +189,7 @@ H:\AspNet Projects\ContactProject\ContactProject\bin\Microsoft.Owin.Security.OAu
 H:\AspNet Projects\ContactProject\ContactProject\bin\Microsoft.Owin.Security.Google.xml
 H:\AspNet Projects\ContactProject\ContactProject\bin\Microsoft.Owin.Security.Twitter.xml
 H:\AspNet Projects\ContactProject\ContactProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+H:\AspNet Projects\ContactProject\ContactProject\obj\Debug\ContactProject.csprojResolveAssemblyReference.cache
 H:\AspNet Projects\ContactProject\ContactProject\obj\Debug\ContactProject.Migrations.InitialCreate.resources
 H:\AspNet Projects\ContactProject\ContactProject\obj\Debug\ContactProject.csproj.GenerateResource.Cache
 H:\AspNet Projects\ContactProject\ContactProject\obj\Debug\ContactProject.dll
