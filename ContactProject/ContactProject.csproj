@@ -207,8 +207,12 @@
     <Compile Include="Migrations\201702050804056_InitialCreate.Designer.cs">
       <DependentUpon>201702050804056_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702072155229_Configuration.cs" />
+    <Compile Include="Migrations\201702072155229_Configuration.Designer.cs">
+      <DependentUpon>201702072155229_Configuration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDbConfiguration.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\OldConfiguration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ContactProjectContext.cs" />
@@ -345,6 +349,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702050804056_InitialCreate.resx">
       <DependentUpon>201702050804056_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702072155229_Configuration.resx">
+      <DependentUpon>201702072155229_Configuration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

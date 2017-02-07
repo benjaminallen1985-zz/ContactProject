@@ -194,3 +194,4 @@ H:\AspNet Projects\ContactProject\ContactProject\obj\Debug\ContactProject.Migrat
 H:\AspNet Projects\ContactProject\ContactProject\obj\Debug\ContactProject.csproj.GenerateResource.Cache
 H:\AspNet Projects\ContactProject\ContactProject\obj\Debug\ContactProject.dll
 H:\AspNet Projects\ContactProject\ContactProject\obj\Debug\ContactProject.pdb
+H:\AspNet Projects\ContactProject\ContactProject\obj\Debug\ContactProject.Migrations.Configuration.resources
