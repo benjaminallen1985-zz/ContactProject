@@ -32,7 +32,7 @@ namespace ContactProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Contact contact = db.Contacts.Find(id);
-            if (contact == null)
+            if (contact == null || !IsUserContact(contact))
             {
                 return HttpNotFound();
             }
@@ -75,10 +75,12 @@ namespace ContactProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Contact contact = db.Contacts.Find(id);
-            if (contact == null)
+            if (contact == null || !IsUserContact(contact))
             {
                 return HttpNotFound();
             }
+
+            ViewBag.UserId = GetCurrentUserId();
             return View(contact);
         }
 
@@ -96,6 +98,8 @@ namespace ContactProject.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            ViewBag.UserId = GetCurrentUserId();
             return View(contact);
         }
 
@@ -108,7 +112,7 @@ namespace ContactProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Contact contact = db.Contacts.Find(id);
-            if (contact == null)
+            if (contact == null || !IsUserContact(contact))
             {
                 return HttpNotFound();
             }
