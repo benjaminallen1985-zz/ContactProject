@@ -108,7 +108,7 @@ namespace ContactProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Contact contact = db.Contacts.Find(id);
-            if (contact == null || !)
+            if (contact == null)
             {
                 return HttpNotFound();
             }
